@@ -3,4 +3,5 @@
 
 int _isupper(int c);
 int _putchar(char c);
+int _isdigit(init c);
 #endif /* MAIN_H */
