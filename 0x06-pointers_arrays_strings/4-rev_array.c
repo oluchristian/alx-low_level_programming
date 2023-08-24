@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * array_reversal - reverses arrays of integers
+ * reverse_array - reverse array of integers
  * @a: array
- * @n: number of array elements
+ * @n: number of elements of array
  *
  * Return: void
  */
@@ -18,3 +18,4 @@ void reverse_array(int *a, int n)
 		a[n] = t;
 	}
 }
+
