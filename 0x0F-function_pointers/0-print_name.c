@@ -1,20 +1,16 @@
 #include "function_pointers.h"
+#include <stdio.h>
 /**
- *print_normal - prints name char
- *print_name- print name using pointer to function
- *@name: name to print
- */
-void print_normal(char *name)
-{
-int i = 0;
-while (name[i] != '\0')
-{
-_putchar(name[i]);
-i++;
-}
-}
+ * print_name - print name using pointer to function
+ * @name: the string to add
+ * @f: the pointer to function
+ * Return: nothing
+ **/
 void print_name(char *name, void (*f)(char *))
 {
-f(name);
+	if (name == NULL || f == NULL)
+		return;
+
+	f(name);
 }
 
