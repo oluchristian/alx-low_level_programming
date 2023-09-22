@@ -22,8 +22,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (nodeEnd == NULL)
 	{
 		return (NULL);
-	}
-	
+	}	
 	duplicated = strdup(str);
 	if (duplicated == NULL)
 	{
