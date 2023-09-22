@@ -17,7 +17,7 @@ size_t print_list(const list_t *h)
 		{
 			printf("[0] (nil)\n");
 		}
-		printf("[%lu] %s\n", temp->len, temp->str);
+		printf("[%lu] %s\n", (unsigned long)temp->len, temp->str);
 		temp = temp->next;
 		nodes += 1;
 	}
