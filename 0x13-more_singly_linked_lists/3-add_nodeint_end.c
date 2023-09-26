@@ -1,13 +1,11 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end -  adds a new node at the end of a listint_t list.
+ * add_nodeint_end - adds a new node at the end of a listint_t list
  * @head: head node
  * @n: number value of a node
  *
- * Description: func to add a new node at the end of a listint_t list.
- *
- * Return: returns address of new node
+ * Return: address of the new element, or NULL if it fails.
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
@@ -16,18 +14,18 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 
 	if (newNode == NULL)
 		return (NULL);
+	newNode->n = n;
+	newNode->next = NULL;
+
 	if (*head == NULL)
 	{
 		*head = newNode;
 		return (newNode);
 	}
-
 	while (current->next != NULL)
 	{
 		current = current->next;
 	}
-	newNode->n = n;
-	newNode->next = NULL;
 	current->next = newNode;
 	return (newNode);
 }
