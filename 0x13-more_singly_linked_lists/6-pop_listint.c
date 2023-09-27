@@ -7,11 +7,14 @@
  */
 int pop_listint(listint_t **head)
 {
+	listint_t *toDelete;
+	int data;
+
 	if (*head == NULL)
 		return (0);
-	listint_t *toDelete = *head;
+	toDelete = *head;
 	*head = (*head)->next;
-	int data = toDelete->n;
+	data = toDelete->n;
 
 	free(toDelete);
 	toDelete = NULL;
