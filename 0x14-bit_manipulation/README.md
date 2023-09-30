@@ -1,4 +1,4 @@
-0x14. C - Bit manipulation
+0x14. C - Bit manipulation.
 
 asks
 0. 0
