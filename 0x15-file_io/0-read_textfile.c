@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * read_textfile - eads a text file and prints it to the POSIX standard output
  * @filename: name of the file
@@ -7,37 +8,25 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	if (filname == NULL)
-		return (0);
-	FILE *file = fopen(filename, "r");
+	ssize_t file, r, w;
+	char *buffer;
 
-	if (file == NULL)
-		return (0);
-	char *buffer = malloc(letters);
+	buffer = malloc(letters);
 
-	if (buffer == NULL)
-	{
-		fclose(file);
+	if (filename == NULL)
 		return (0);
-	}
-	ssize_t read_bytes = fread(buffer, 1, letters, file);
+	file = open(filename, O_RDONLY);
 
-	if (read_bytes == -1)
+	if (file == -1)
 	{
 		free(buffer);
-		fclose(file);
 		return (0);
 	}
-	ssize_t write_bytes = write(STDOUT_FILENO, buffer, read_bytes);
+	r = read(file, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
 
-	if (write_bytes == -1 || write_bytes != read_bytes)
-	{
-		free(buffer);
-		fclose(file);
-		return (0);
-	}
+	close(file);
 	free(buffer);
-	fclose(file);
-
-	return (write_bytes);
+	return (w);
 }
+
