@@ -7,7 +7,7 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	hash_node_t node;
+	hash_node_t *node;
 	unsigned long int i;
 
 	if (ht == NULL)
@@ -32,6 +32,6 @@ void hash_table_print(const hash_table_t *ht)
 			printf(", ");
 		}
 	}
-	printf("}")
+	printf("}\n");
 }
 
